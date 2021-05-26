@@ -54,6 +54,18 @@
     return [[NSArray alloc] initWithArray:paths copyItems:YES];
 }
 
++ (NSArray<SVGBezierPath*> *)pathsFromSVGAtURLwithString:(NSURL *)aURL stringValue:(NSString *)string
+{
+    NSArray<SVGBezierPath*> *paths = [self.class._svg_pathCache objectForKey:aURL];
+    if (!paths) {
+        paths =  [self pathsFromSVGString:string];
+        if (paths) {
+            [self.class._svg_pathCache setObject:paths forKey:aURL];
+        }
+    }
+    return [[NSArray alloc] initWithArray:paths copyItems:YES];
+}
+
 + (NSArray<SVGBezierPath*> *)pathsFromSVGString:(NSString * const)svgString
 {
     SVGAttributeSet *cgAttrs;

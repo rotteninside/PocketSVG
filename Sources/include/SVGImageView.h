@@ -29,6 +29,7 @@ IB_DESIGNABLE
  */
 - (instancetype)initWithContentsOfURL:(NSURL *)url;
 
+- (instancetype)initWithContentsOfURLandString:(NSURL *)url stringValue:(NSString *)string;
 
 /*!
  * @discussion The SVG paths the view should draw.

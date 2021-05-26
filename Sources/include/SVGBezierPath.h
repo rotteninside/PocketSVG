@@ -50,6 +50,7 @@ FOUNDATION_EXTERN void SVGDrawPathsWithBlock(NSArray<SVGBezierPath*> * const pat
  */
 + (NSArray<SVGBezierPath*> *)pathsFromSVGAtURL:(NSURL *)aURL;
 
++ (NSArray<SVGBezierPath*> *)pathsFromSVGAtURLwithString:(NSURL *)aURL stringValue:(NSString *)string;
 
 /*!
  * @brief Returns an array of paths given the XML string of an SVG.
